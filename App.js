@@ -1,13 +1,33 @@
-import GameInfo from './components/GameInfo';
-import GameBoard from './components/GameBoard';
+import { StatusBar } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import GameInfo from './screens/GameInfo';
+import GameBoard from './screens/GameBoard';
 import GameContextProvider from './components/GameContextProvider';
-import './styles.css';
+import './css/styles.css';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
     return (
-        <GameContextProvider>
-            <GameBoard />
-            <GameInfo />
-        </GameContextProvider>
+        <>
+            <StatusBar style='light' />
+            <GameContextProvider>
+                <NavigationContainer>
+                    <Stack.Navigator
+                    >
+                        <Stack.Screen
+                            name='Tic-Tac-Toe'
+                            component={GameBoard}
+                        />
+                        <Stack.Screen
+                            name='Moves'
+                            component={GameInfo}
+                        />
+                    </Stack.Navigator>
+                </NavigationContainer>
+            </GameContextProvider>
+        </>
     );
 }

@@ -1,4 +1,5 @@
 import Square from './Square';
+import { View } from 'react-native';
 import { calculateWinner } from './GameLogic';
 
 export default function Board({ xIsNext, squares, onPlay, winnerInfo }) {
@@ -11,19 +12,10 @@ export default function Board({ xIsNext, squares, onPlay, winnerInfo }) {
     }
   
     return (
-        <div>
+       <div className='game-board'>
             {
-                [...Array(3).keys().map(row => (
-                    <div key={row} className='board-row'>
-                        {
-                            [...Array(3).keys().map(col => {
-                                const n = row * 3 + col;
-                                return (
-                                    <Square key={n} value={squares[n]} onSquareClick={() => handleClick(n)} isWinner={winnerInfo?.line?.includes(n)} />
-                                )
-                            })]
-                        }
-                    </div>
+                [...Array(9).keys().map(n => (
+                    <Square key={n} value={squares[n]} onSquareClick={() => handleClick(n)} isWinner={winnerInfo?.line?.includes(n)} />
                 ))]
             }
         </div>
