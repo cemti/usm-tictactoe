@@ -1,6 +1,4 @@
 import Square from './Square';
-import { View } from 'react-native';
-import { calculateWinner } from './GameLogic';
 
 export default function Board({ xIsNext, squares, onPlay, winnerInfo }) {
     function handleClick(i) {

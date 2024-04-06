@@ -1,4 +1,4 @@
-import { View, Button, Text } from 'react-native';
+import { Button } from 'react-native';
 import { useContext, useEffect } from 'react';
 import Board from '../components/Board';
 import { calculateWinner } from '../components/GameLogic';

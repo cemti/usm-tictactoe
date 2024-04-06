@@ -1,4 +1,4 @@
-import { View, Text, Button, FlatList } from 'react-native';
+import { Button, FlatList } from 'react-native';
 import { useContext, useEffect } from 'react';
 import { GameContext } from '../components/GameContextProvider';
 import IconButton from '../components/IconButton';
@@ -6,7 +6,7 @@ import IconButton from '../components/IconButton';
 export default function GameInfo({ navigation }) {
     const { historyState, moveState, toggleState } = useContext(GameContext);
     
-    const [history, setHistory] = historyState;
+    const [history] = historyState;
     const [currentMove, setCurrentMove] = moveState;
     const [currentToggle, setToggle] = toggleState;
     

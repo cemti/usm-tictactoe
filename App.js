@@ -1,5 +1,4 @@
 import { StatusBar } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import GameInfo from './screens/GameInfo';
@@ -15,8 +14,7 @@ export default function App() {
             <StatusBar style='light' />
             <GameContextProvider>
                 <NavigationContainer>
-                    <Stack.Navigator
-                    >
+                    <Stack.Navigator>
                         <Stack.Screen
                             name='Tic-Tac-Toe'
                             component={GameBoard}
