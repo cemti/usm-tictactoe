@@ -15,9 +15,7 @@ export default function GameContextProvider({ children }) {
                 toggleState,
                 xIsNext: currentMove % 2 === 0,
                 currentSquares: history[currentMove][0]
-            }}            
-            className='game'
-        >
+            }}>
             {children}
         </GameContext.Provider>
     );
